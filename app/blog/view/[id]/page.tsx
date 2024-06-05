@@ -32,7 +32,7 @@ const BlogPostView = ({ params }: { params: { id: string, post: any } }) => {
       }, [params.id]);
     return (
         <>
-       <div className='h-[70px] bg-green-900 mb-16'></div>
+       <div className='h-[70px] mb-16'></div>
        {isLoading &&  <div className="py-14 flex justify-center items-center"><LoadingAnimation /></div>}
         {!isLoading && <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4 mb-12">
             <h1 className='text-2xl font-bold text-center  bg-clip-text text-transparent bg-gradient-to-tr from-green-400 to-green-800 '>{post.title}</h1>

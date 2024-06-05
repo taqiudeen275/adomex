@@ -1,5 +1,5 @@
 'use client'
-
+import { usePathname  } from 'next/navigation';
 import { MenuIcon, SidebarCloseIcon } from 'lucide-react';
 import Link from 'next/link';
 import { useState,useEffect } from 'react';
@@ -12,21 +12,25 @@ const NavBar: React.FC = () => {
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+  const pathname = usePathname ();
 
   useEffect(() => {
+    if (pathname.includes("/blog/view")){
+      setHasScrolled(true);
+      }
     const handleScroll = () => {
-      if (window.scrollY > 100) {
+      if (window.scrollY > 0 ) {
         setHasScrolled(true);
       } else {
         setHasScrolled(false);
+       
       }
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, [pathname]);
 
   return (
     <nav className={`fixed w-full  z-10 ${hasScrolled ? 'bg-white/70 border-b backdrop-blur' : 'bg-transparent'}`}>

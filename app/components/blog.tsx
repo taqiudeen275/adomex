@@ -39,7 +39,7 @@ const BlogListGrid: React.FC<BlogListGridProps> = ({ posts }) => {
     return (
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             {posts.map((post) => (
-                <Link href={`/blog/${post.id}`} key={post.id} className=" w-[350px]  hover:text-clip hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-tr hover:from-green-400 hover:to-green-800">
+                <Link href={`/blog/view/${post.id}`} key={post.id} className=" w-[350px]  hover:text-clip hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-tr hover:from-green-400 hover:to-green-800">
                     <Image
                         src={post.coverImage}
                         alt={`Cover Image for ${post.title}`}
