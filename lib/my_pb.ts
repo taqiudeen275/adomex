@@ -13,9 +13,9 @@ export class DatabaseClient {
     authorBaseURL: string;
     constructor () {
         this.client = new PocketBase(POCKET_BASE_URL);
-        this.postBaseURL = `${POCKET_BASE_URL}/api/files/vg4n7izj1fco4qc/`
-        this.galleryBaseURL = `${POCKET_BASE_URL}/api/files/5jo2abkbxs6upgu/`
-        this.authorBaseURL = `${POCKET_BASE_URL}/api/files/qgiim6q4w0ilb57/`
+        this.postBaseURL = `${POCKET_BASE_URL}api/files/vg4n7izj1fco4qc/`
+        this.galleryBaseURL = `${POCKET_BASE_URL}api/files/5jo2abkbxs6upgu/`
+        this.authorBaseURL = `${POCKET_BASE_URL}api/files/qgiim6q4w0ilb57/`
     }
 
     async authenticate (email: string, password: string) {

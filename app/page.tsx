@@ -7,35 +7,44 @@ import NavBar from "./aceternity_ui/navigation-bar";
 import AboutUs from "./components/about";
 import Services from "./components/services";
 import { Gallery } from "./components/gallery";
-import Blog from "./components/blog";
+import Blog, { BlogPost } from "./components/blog";
 import Contacts from "./components/contact";
 import Footer from "./components/footer";
 import Link from "next/link";
 import {useEffect, useState} from "react";
-import { get5Gallery, get3Blog } from "./action";
+import { get5Gallery, get3Blog, getAuthor } from "./action";
 import { RecordModel } from "pocketbase";
+import pb from "@/lib/my_pb";
+import { mapToBlogPost } from "@/lib/special_functions";
+import { images } from "@/lib/consts";
+import LoadingAnimation from "@/components/loading_animation";
+
+
 
 
 export default function Home() {
-  const [gallery, setGallery] = useState<RecordModel[]>([]);
-  const [post, setPost] = useState<RecordModel[]>([]);
+  const [post, setPost] = useState<BlogPost[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
   const [galleryStr, setGalleryStr] = useState<string[]>([]);
   useEffect(() => {
     const fetchInitialData = async () => {
-    const gallery = await get5Gallery();
-    const respost = await get3Blog();
-    setGallery(gallery);
-    setPost(respost);
-    console.log(respost);
+    const gallery_res = await get5Gallery();
+    const post_res = await get3Blog();
+    const author_res = await getAuthor();
+    let tem_imgs: string[] = [];
+
+    for (const record of gallery_res) {
+      tem_imgs.push(`${pb.galleryBaseURL}${record.id}/${record.image}`);
+    }
+    const mappedPosts: BlogPost[] = post_res.map((post) => mapToBlogPost(post, author_res));
+    setPost(mappedPosts);
+    setGalleryStr(tem_imgs);
+    setIsLoading(false);
   }
     fetchInitialData();
   }, []);
 
-  const images = [
-    "/1.jpg",
-    "/2.jpg",
-    "/3.jpg",
-  ];
+
   return (
    <>
     <ImagesSlider className="h-[40rem]" images={images}>
@@ -66,9 +75,12 @@ export default function Home() {
     </ImagesSlider>
     <AboutUs />
     <Services />
-    <Gallery images={} />
-    <Blog />
+    {isLoading &&  <div className="py-14 flex justify-center items-center"><LoadingAnimation /></div>}
+    {!isLoading && <Gallery images={galleryStr} />}
+    {isLoading &&  <div className="py-14 flex justify-center items-center"><LoadingAnimation /></div>}
+    {!isLoading && <Blog posts={post} />}
     <Contacts />
+ 
    </>
   );
 }

@@ -38,6 +38,14 @@ export async function getBlog() {
   }
 
   
+export async function getSingleBlog(id: string) {
+    const res = await pb.client.collection('Post').getOne(id);
+    console.log(res);
+    return res 
+}
+
+
+  
 export async function getGallery() {
     try {
       const res = await pb.client.collection('Gallery').getFullList();

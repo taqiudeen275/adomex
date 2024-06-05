@@ -3,14 +3,11 @@ import React from 'react';
 import { motion } from "framer-motion";
 import { ImagesSlider } from '../aceternity_ui/images-slider';
 import { BackgroundBeams } from '../aceternity_ui/background-beams';
+import { images } from '@/lib/consts';
 
 
 const AboutPage = () => {
-    const images = [
-        "/1.jpg",
-        "/2.jpg",
-        "/3.jpg",
-      ];
+
   return (
     <>
     <ImagesSlider className="h-[40rem]" images={images}>
