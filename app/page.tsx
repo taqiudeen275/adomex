@@ -38,7 +38,7 @@ export default function Home() {
     }
     const mappedPosts: BlogPost[] = post_res.map((post) => mapToBlogPost(post, author_res));
     setPost(mappedPosts);
-    setGalleryStr(tem_imgs);
+    setGalleryStr(tem_imgs.slice(0, 5));
     setIsLoading(false);
   }
     fetchInitialData();

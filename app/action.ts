@@ -5,7 +5,9 @@ import pb from "@/lib/my_pb";
 
 export async function get3Blog() {
     try {
-      const res = await pb.client.collection('Post').getFullList();
+      const res = await pb.client.collection('Post').getFullList({
+        sort: '-created',
+    });
       console.log(res);
       return res
     } catch (error) {
@@ -17,7 +19,9 @@ export async function get3Blog() {
   
 export async function get5Gallery() {
     try {
-      const res = await pb.client.collection('Gallery').getFullList();
+      const res = await pb.client.collection('Gallery').getFullList({
+        sort: '-created',
+    });
       console.log(res);
       return res
     } catch (error) {
@@ -28,7 +32,9 @@ export async function get5Gallery() {
 
 export async function getBlog() {
     try {
-      const res = await pb.client.collection('Post').getFullList();
+      const res = await pb.client.collection('Post').getFullList({
+        sort: '-created',
+    });
       console.log(res);
       return res
     } catch (error) {
@@ -48,7 +54,9 @@ export async function getSingleBlog(id: string) {
   
 export async function getGallery() {
     try {
-      const res = await pb.client.collection('Gallery').getFullList();
+      const res = await pb.client.collection('Gallery').getFullList({
+        sort: '-created',
+    });;
       console.log(res);
       return res
     } catch (error) {
@@ -57,9 +65,23 @@ export async function getGallery() {
     }
   }
   
+export async function getMultiGallery() {
+  try {
+    const res = await pb.client.collection('MultiplePicGallery').getFullList({
+      sort: '-created',
+  });;
+    console.log(res);
+    return res
+  } catch (error) {
+    console.log(error)
+    return []
+  }
+}
   export async function getAuthor() {
     try {
-      const res = await pb.client.collection('Author').getFullList();
+      const res = await pb.client.collection('Author').getFullList({
+        sort: '-created',
+    });;
       console.log(res);
       return res
     } catch (error) {
