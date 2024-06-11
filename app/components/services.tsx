@@ -7,7 +7,7 @@ const content = [
     {
       title: "Adomex Plus Chemicals",
       description:
-        "We offer General Dispensing, Free Vitial, Diabetes and Hypertension screening and management, Hepatitis B/ C screening and Vaccination, free Health and Drug Consults, Malaria rapid diagnostic testing(RDT), First aid treatment",
+        "We offer General Dispensing, Free Vitial, Diabetes and Hypertension screening and management, Hepatitis B & C screening and Vaccination, free Health and Drug Consults, Malaria rapid diagnostic testing(RDT), First aid treatment",
       content: (
         <div className="h-full w-full  flex items-center justify-center text-white">
         <Image
@@ -24,7 +24,7 @@ const content = [
     {
       title: "Adomex Medical laboratory and diagnostic centre",
       description:
-        "Laboratory services, Ultrasound scan services",
+        "Ultrasound diagnostics, Electrocardiograms, laboratory services, Hematology, Clinical chemistry, immunology, Pathology, Cytology",
       content: (
         <div className="h-full w-full  flex items-center justify-center text-white">
           <Image 
