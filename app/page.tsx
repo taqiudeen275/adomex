@@ -34,8 +34,10 @@ export default function Home() {
     let tem_imgs: string[] = [];
 
     for (const record of gallery_res) {
-      tem_imgs.push(`${pb.galleryBaseURL}${record.id}/${record.image}`);
-    }
+      
+    for (const img of record.image) {
+      tem_imgs.push(`${pb.galleryBaseURL}${record.id}/${img}`);
+    }}
     const mappedPosts: BlogPost[] = post_res.map((post) => mapToBlogPost(post, author_res));
     setPost(mappedPosts);
     setGalleryStr(tem_imgs.slice(0, 5));
