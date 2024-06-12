@@ -9,7 +9,7 @@ const AboutUs = () => {
         <h1 className='text-center font-mono bg-clip-text text-primary text-xl  m-3'>The Adomex Group has many businesses with different services. Below are some of our services</h1>
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
     <WobbleCard
-      containerClassName="col-span-1 lg:col-span-2 h-full bg-green-800 min-h-[500px] lg:min-h-[300px]"
+      containerClassName="col-span-1 lg:col-span-2 h-full bg-yellow-800 min-h-[500px] lg:min-h-[300px]"
       className=""
     >
       <div className="max-w-[70%]">

@@ -5,7 +5,7 @@ const LoadingAnimation = () => {
   return (
     <>
     <Image className='h-16 w-16 animate-bounce'  alt='logo' src={logo} />
-    <p className='animate-pulse  bg-clip-text text-transparent font-bold bg-gradient-to-tr from-green-400 to-green-800'>Loading...</p>
+    <p className='animate-pulse  bg-clip-text text-transparent font-bold bg-gradient-to-tr from-[#E1BE6D] to-[#8E6428]'>Loading...</p>
     </>
   )
 }
