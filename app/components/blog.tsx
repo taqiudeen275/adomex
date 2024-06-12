@@ -6,7 +6,7 @@ const Blog = ({posts}:BlogListGridProps) => {
         <>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 pt-16">
             <div className="my-8 ">
-                <h1 className='text-center font-extrabold  bg-clip-text text-transparent text-5xl bg-gradient-to-tr from-green-400 to-green-800 m-3 pb-4'>Blog</h1>
+                <h1 className='text-center font-extrabold text-primary text-5xl pb-4'>Blog</h1>
                 <BlogListGrid posts={posts} />
             </div>
             </div>
@@ -39,13 +39,13 @@ const BlogListGrid: React.FC<BlogListGridProps> = ({ posts }) => {
     return (
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             {posts.map((post) => (
-                <Link href={`/blog/view/${post.id}`} key={post.id} className=" w-[350px]  hover:text-clip hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-tr hover:from-green-400 hover:to-green-800">
+                <Link href={`/blog/view/${post.id}`} key={post.id} className=" w-[350px]  hover:text-primary">
                     <Image
                         src={post.coverImage}
                         alt={`Cover Image for ${post.title}`}
-                        width={200}
-                        height={300}
-                        className="w-full h-[340px] rounded-sm object-fill hover:scale-[1.1] transition-all"
+                        width={800}
+                        height={800}
+                        className="w-full h-[300px] rounded-sm object-cover hover:scale-[1.1] transition-all"
                     />
                     <div className="p-4">
                         <h3 className="mb-2 text-xl font-bold">{post.title}</h3>

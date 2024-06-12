@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
-import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaTiktok } from 'react-icons/fa';
+import { FaFacebook, FaTiktok, FaWhatsapp } from 'react-icons/fa';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -52,6 +52,14 @@ const Footer = () => {
                 className="text-white-400 hover:text-green-500 transition-colors"
               >
                 <FaTiktok size={24} />
+              </a>
+              <a
+              target='_blank'
+
+                href="https://wa.me/233248478492"
+                className="text-white-400 hover:text-green-500 transition-colors"
+              >
+                <FaWhatsapp size={24} />
               </a>
             </div>
           </div>

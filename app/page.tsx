@@ -12,25 +12,26 @@ import Contacts from "./components/contact";
 import Footer from "./components/footer";
 import Link from "next/link";
 import {useEffect, useState} from "react";
-import { get5Gallery, get3Blog, getAuthor } from "./action";
+import { get5Gallery, get3Blog, getAuthor, getFAQ } from "./action";
 import { RecordModel } from "pocketbase";
 import pb from "@/lib/my_pb";
 import { mapToBlogPost } from "@/lib/special_functions";
 import { images } from "@/lib/consts";
 import LoadingAnimation from "@/components/loading_animation";
-
-
-
+import { FAQ,Highlight } from "./components/faq";
 
 export default function Home() {
   const [post, setPost] = useState<BlogPost[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [galleryStr, setGalleryStr] = useState<string[]>([]);
+  const [faq, setFAQ] = useState<any[]>([]);
+  
   useEffect(() => {
     const fetchInitialData = async () => {
     const gallery_res = await get5Gallery();
     const post_res = await get3Blog();
     const author_res = await getAuthor();
+    const faq_res = await getFAQ();
     let tem_imgs: string[] = [];
 
     for (const record of gallery_res) {
@@ -38,6 +39,18 @@ export default function Home() {
     for (const img of record.image) {
       tem_imgs.push(`${pb.galleryBaseURL}${record.id}/${img}`);
     }}
+    const faqs = faq_res.map((faq_itm, index) =>  ({
+        id: index + 1,
+        name: "Dr. James Addo",
+        designation: "CEO",
+        content: (
+          <p>
+            <Highlight>{faq_itm.question} </Highlight> 
+            {faq_itm.answer}
+          </p>
+        )
+      }))
+    setFAQ(faqs);
     const mappedPosts: BlogPost[] = post_res.map((post) => mapToBlogPost(post, author_res));
     setPost(mappedPosts);
     setGalleryStr(tem_imgs.slice(0, 5));
@@ -64,7 +77,7 @@ export default function Home() {
         }}
         className="z-50 flex flex-col justify-center items-center"
       >
-        <motion.p className="font-bold text-xl md:text-5xl text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 py-4">
+        <motion.p className="font-bold text-xl md:text-5xl text-center  text-white py-4">
         Your Trusted Partner in Pharmaceutical Products, <br />Medical Laboratory and Diagnostic - Imaging <br /> Services
         </motion.p>
         <Link href="/#about" >
@@ -82,7 +95,8 @@ export default function Home() {
     {isLoading &&  <div className="py-14 flex justify-center items-center"><LoadingAnimation /></div>}
     {!isLoading && <Blog posts={post} />}
     <Contacts />
- 
+    {isLoading &&  <div className="py-14 flex justify-center items-center"><LoadingAnimation /></div>}
+    {!isLoading && <FAQ items={faq} />}
    </>
   );
 }

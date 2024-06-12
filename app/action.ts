@@ -44,6 +44,19 @@ export async function getBlog() {
   }
 
   
+export async function getFAQ() {
+  try {
+    const res = await pb.client.collection('FAQ').getFullList({
+      sort: '-created',
+  });
+    console.log(res);
+    return res
+  } catch (error) {
+    console.log(error)
+    return []
+  }
+}
+  
 export async function getSingleBlog(id: string) {
     const res = await pb.client.collection('Post').getOne(id);
     console.log(res);

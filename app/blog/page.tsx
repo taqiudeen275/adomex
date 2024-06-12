@@ -58,7 +58,7 @@ const BlogPage = () => {
           }}
           className="z-50 flex flex-col justify-center items-center"
         >
-          <motion.p className="font-bold text-xl md:text-5xl text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 py-4">
+          <motion.p className="font-bold text-xl md:text-5xl text-center bg-clip-text text-white py-4">
             Our <br />Blog Page
           </motion.p>
 
@@ -68,7 +68,7 @@ const BlogPage = () => {
        {isLoading &&  <div className="py-14 flex justify-center items-center"><LoadingAnimation /></div>}
         {!isLoading && <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {posts.map((post) => (
-            <Link href={`/blog/view/${post.id}`} key={post.id} className=" w-[350px]  hover:text-clip hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-tr hover:from-green-400 hover:to-green-800">
+            <Link href={`/blog/view/${post.id}`} key={post.id} className=" w-[350px]   hover:text-primary">
               <Image
                 src={post.coverImage}
                 alt={`Cover Image for ${post.title}`}

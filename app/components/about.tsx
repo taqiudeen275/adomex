@@ -5,8 +5,8 @@ import Image from 'next/image'
 const AboutUs = () => {
   return (
     <div className='max-w-7xl mx-auto w-full py-3 my-5 px-3 mt-16 pt-16' id='about'>
-        <h1 className='text-center font-extrabold  bg-clip-text text-transparent text-5xl bg-gradient-to-tr from-green-400 to-green-800 m-3'>About Us</h1>
-        <h1 className='text-center font-mono bg-clip-text text-transparent text-xl bg-gradient-to-tr from-green-400 to-green-800 m-3'>The Adomex Group has many businesses with different services. Below are some of our services</h1>
+        <h1 className='text-center font-extrabold text-primary text-5xl m-3'>About Us</h1>
+        <h1 className='text-center font-mono bg-clip-text text-primary text-xl  m-3'>The Adomex Group has many businesses with different services. Below are some of our services</h1>
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
     <WobbleCard
       containerClassName="col-span-1 lg:col-span-2 h-full bg-green-800 min-h-[500px] lg:min-h-[300px]"
@@ -17,7 +17,7 @@ const AboutUs = () => {
         Adomex Plus Chemicals 
         </h2>
         <p className="mt-4 text-left  text-base/6 text-neutral-200">
-        The Health of people in the communities we serve and the nation at large is our priority and it is a great honour to provide you with quality and affordable pharmaceutical and surgical product
+        Providing quality health services to the people in the communities we serve and the nation at large is our priority and it is a great honour to provide you with quality and affordable pharmaceutical and surgical products
         </p>
       </div>
       <Image
@@ -42,7 +42,7 @@ const AboutUs = () => {
         Adomex Medical Laboratory And Diagnostic Centre
         </h2>
         <p className="mt-4 max-w-[26rem] text-left  text-base/6 text-neutral-200">
-        At Adomex Medical Laboratory and Diagnostic Centre, we are dedicated to providing comprehensive and reliable medical testing
+        At Adomex Medical Laboratory and Diagnostic Centre, we are dedicated in providing comprehensive and reliable medical testing
          services to support the healthcare needs of our community and beyond. We provide excellence diagnostic informations for healthy lives and well-being for all
         </p>
       </div>
@@ -63,7 +63,7 @@ const AboutUs = () => {
         Adomex  crop and animals Farming 
         </h2>
         <p className="mt-4 text-left  text-base/6 text-neutral-200">
-        At Adomex Crop and Animal Farming, we are dedicated to sustainable and responsible agricultural practices that prioritize the well-being of our environment, our animals, and the quality of our produce. 
+        At Adomex Crop and Animal Farming, we are dedicated to sustainable and responsible agricultural practices that prioritize the well-being of our environment, our animals, and the quality of our products``. 
         </p>
       </div>
       <Image

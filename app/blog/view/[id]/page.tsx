@@ -48,8 +48,8 @@ const BlogPostView = ({ params }: { params: { id: string, post: any } }) => {
             <Image
                         src={post.coverImage}
                         alt={`Cover Image for ${post.title}`}
-                        width={200}
-                        height={300}
+                        width={1000}
+                        height={1000}
                         className="w-[80%] h-[400px] rounded-sm object-cover mb-12 transition-all"
                     />
             </div>

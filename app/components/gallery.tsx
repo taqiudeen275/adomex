@@ -30,7 +30,7 @@ export function Gallery({images}:GallerProp) {
   
   return (
     <div className="mt-16 pt-16">
-       <h1 className='text-center font-extrabold  bg-clip-text text-transparent text-5xl bg-gradient-to-tr from-green-400 to-green-800 m-3 pb-4'>Gallery</h1>
+       <h1 className='text-center font-extrabold  text-primary text-5xl  m-3 pb-4'>Gallery</h1>
       
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
@@ -47,8 +47,8 @@ export function Gallery({images}:GallerProp) {
             <Image
               src={image}
               alt={`Image ${index + 1}`}
-              width={500}
-              height={500}
+              width={1000}
+              height={1000}
               className="w-full h-full object-cover rounded-lg hover:scale-[1.1] transition-all"
             />
           </div>

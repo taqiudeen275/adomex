@@ -12,10 +12,9 @@ const content = [
         <div className="h-full w-full  flex items-center justify-center text-white">
         <Image
           src="/3.jpg"
-          width={300}
-          height={300}
-          quality={100}
-          className="h-full w-full object-center"
+          width={1000}
+          height={1000}
+          className="h-full w-full object-center object-cover"
           alt="linear board demo"
         />
       </div>
@@ -29,9 +28,8 @@ const content = [
         <div className="h-full w-full  flex items-center justify-center text-white">
           <Image 
             src="/5.jpg"
-            width={300}
-            height={300}
-            quality={80}
+            width={1000}
+            height={1000}
             className="h-full w-full object-cover"
             alt=""
           />
@@ -41,7 +39,7 @@ const content = [
     {
       title: "Adomex Electricals appliances",
       description:
-        "Sales of electrical appliances.",
+        "We provide all forms  of home and  electrical appliances.",
       content: (
         <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--orange-500),var(--yellow-500))] flex items-center justify-center text-white">
           Electrical Appliences
@@ -54,7 +52,7 @@ const content = [
 const Services = () => {
   return (
     <div className='py-8 mt-16 pt-16' id='services'>
-              <h1 className='text-center font-extrabold  bg-clip-text text-transparent text-5xl bg-gradient-to-tr from-green-400 to-green-800 m-3'>Services</h1>
+              <h1 className='text-center font-extrabold text-primary text-5xl bg-gradient-to-tr  m-3'>Services</h1>
 
      <div className="px-4 pb-10 pt-3">
       <StickyScroll content={content} />
