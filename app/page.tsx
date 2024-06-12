@@ -45,11 +45,26 @@ export default function Home() {
         designation: "CEO",
         content: (
           <p>
-            <Highlight>{faq_itm.question} </Highlight> 
-            {faq_itm.answer}
+            <Highlight>{faq_itm.question ?? "NO FAQ YET?"} </Highlight> 
+            {faq_itm.answer ?? "Yes"}
           </p>
         )
       }))
+    if (faqs.length === 0){
+      faqs.push(
+       {
+          id: 1,
+          name: "Dr. James Addo",
+          designation: "CEO",
+          content: (
+            <p>
+              <Highlight>NO FAQ YET? </Highlight> 
+              Yes
+            </p>
+          )
+        })
+      
+    }
     setFAQ(faqs);
     const mappedPosts: BlogPost[] = post_res.map((post) => mapToBlogPost(post, author_res));
     setPost(mappedPosts);
