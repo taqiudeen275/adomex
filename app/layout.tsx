@@ -7,7 +7,7 @@ import Footer from "./components/footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Adomex Gropu Official website",
+  title: "Adomex Group Official website",
   description: "An official website for the Adomex Group of companies",
 };
 
